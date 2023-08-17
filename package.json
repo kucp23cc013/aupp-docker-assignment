@@ -8,7 +8,7 @@
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "dev.metfone",
+  "author": "minuthprom",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
