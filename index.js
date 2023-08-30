@@ -31,6 +31,11 @@ app.use(express.json());
 
 // Create API endpoints
 
+app.get("/", async (req, res) => {
+  res.status(200).json({"message": "Welcome"})
+})
+
+
 // Add a new employee
 app.post("/api/employees", async (req, res) => {
   const employee = new Employee({
