@@ -6,6 +6,8 @@ services:
     container_name: express-app
     ports:
       - 3000:3000
+    environment:
+      - MONGO_DB_URI=mongodb://mongo:27017/employees
     depends_on:
       - mongo
 
