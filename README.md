@@ -1,5 +1,5 @@
 # aupp-docker-assignment
-
+Application run on port 3000
 - ENV:
 	- **MONGO_DB_URI**
 - API:
