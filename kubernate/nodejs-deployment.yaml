@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-app
+spec:
+  selector:
+    matchLabels:
+      app: nodejs-app
+  template:
+    metadata:
+      labels:
+        app: nodejs-app
+    spec:
+      containers:
+      - name: nodejs-container
+        image: kucp23cc013/docker-node-assignment
+        env:
+        - name: MONGO_DB_URI
+          value: mongodb+srv://minuthprom:123456789X@cluster0.g5bvxxl.mongodb.net/employee-minuth-db
+        ports:
+        - containerPort: 3000
