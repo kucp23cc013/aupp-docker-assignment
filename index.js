@@ -38,6 +38,16 @@ app.get("/", async (req, res) => {
 
 // Add a new employee
 app.post("/api/employees", async (req, res) => {
+
+  const emailid = req.params.emailid;
+
+  const existingEmployee = await Employee.findOne({ emailid });
+
+  if (existingEmployee) {
+    res.status(404).json({ message: "This email is already exist!" });
+    return;
+  }
+
   const employee = new Employee({
     empid: req.body.empid,
     name: req.body.name,
@@ -53,6 +63,7 @@ app.post("/api/employees", async (req, res) => {
 // Get all employees
 app.get("/api/employees", async (req, res) => {
   const employees = await Employee.find();
+  console.log('emp', employees)
 
   res.status(200).json(employees);
 });
